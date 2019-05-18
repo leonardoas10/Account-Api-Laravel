@@ -13,4 +13,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test2', function () {
+    class usuario {
+        public $nombreUsuario;
+        public static $minPassword = 6;
+    
+        public static function validar($passs){
+            if(strlen($passs) >= self::$minPassword) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+     $pass = "1234";
+    
+    if(usuario::validar($pass)) {
+        return "true";
+    }
+    else {
+        return "false";
+    }
+    
+
+});
+
 

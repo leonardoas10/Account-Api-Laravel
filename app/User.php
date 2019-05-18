@@ -9,14 +9,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-    public $name;
-    public static function hi() {
-        return User;
-    }
+    // public $name;
+    // public static function hi() {
+    //     return User;
+    // }
 
-    public function h2() {
-        return $this->name;
-    }
+    // public function h2() {
+    //     return $this->name;
+    // }
     /**
      * The attributes that are mass assignable.
      *
@@ -44,5 +44,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    const TEST = 'T';
+    // const TEST = 'T';
 }
