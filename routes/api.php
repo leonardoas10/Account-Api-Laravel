@@ -19,34 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/signin', function (Request $request) {
-    if ( $request->input('email') === "leo@gmail.com" && $request->input('password') === "123" ) {
-        return [
-            "message" => "welcome",
-            "token" => "jdjdjddjn"
-        ]; 
-    }
-    else {
-        return response( ["message" => "invalid credentials", "success" => false], 404);
-    }
-});
+Route::post('/signin', "AuthController@signin" );
 
-Route::post('/register', function (Request $request) {
-    $name = $request->input('name');
-    $email = $request->input('email');
-    $password = $request->input('password');
-     if ($request->input('name') !== null && $request->input('email') !== null && $request->input('password') !== null)  {
-         return [
-             "name" => $name,
-             "email" => $email,
-             "password" => $password,
-             "success" => true, 
-         ];
-     }
-     else {
-         return response ( ["message" => "invalid credentials", "success" => false], 404);
-     }
-});  
+Route::post('/register', "AuthController@register");  
 
 // Route::get('/test', function (Request $request) {
 
