@@ -19,9 +19,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/signin', "AuthController@signin" );
+Route::post('/signin', "AuthController@signin");
 
 Route::post('/register', "AuthController@register");  
+
+Route::get('/investment', "InvestmentController@index");
+Route::post('/investment', "InvestmentController@store");
+Route::put('/investment/{id}', "InvestmentController@update");
+Route::delete('/investment/{id}', "InvestmentController@destroy");
 
 // Route::get('/test', function (Request $request) {
 
