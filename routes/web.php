@@ -10,7 +10,7 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('laravel');
 });
 
 Route::get('/test2', function () {
